@@ -9,6 +9,8 @@
 import Cocoa
 
 class Document: NSDocument {
+  
+  var splitter: PDFSplitter!
 
   override init() {
       super.init()
