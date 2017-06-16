@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3102CB2D5410F1FC4C57A6F /* Pods_Splits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A0BAC5FFC1BF3FE446AD4 /* Pods_Splits.framework */; };
 		C779DD121EF42E6200A32066 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779DD111EF42E6200A32066 /* AppDelegate.swift */; };
 		C779DD141EF42E6200A32066 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779DD131EF42E6200A32066 /* ViewController.swift */; };
 		C779DD161EF42E6200A32066 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779DD151EF42E6200A32066 /* Document.swift */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57CCCF4EF24DE9C8600370C5 /* Pods-Splits.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splits.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Splits/Pods-Splits.debug.xcconfig"; sourceTree = "<group>"; };
+		8EBE05EBA2918FF6AB499820 /* Pods-Splits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splits.release.xcconfig"; path = "Pods/Target Support Files/Pods-Splits/Pods-Splits.release.xcconfig"; sourceTree = "<group>"; };
+		BE5A0BAC5FFC1BF3FE446AD4 /* Pods_Splits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779DD0E1EF42E6200A32066 /* Splits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Splits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779DD111EF42E6200A32066 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C779DD131EF42E6200A32066 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3102CB2D5410F1FC4C57A6F /* Pods_Splits.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		227480EE2D0B3237B29B3D27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE5A0BAC5FFC1BF3FE446AD4 /* Pods_Splits.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C779DD051EF42E6200A32066 = {
 			isa = PBXGroup;
 			children = (
 				C779DD101EF42E6200A32066 /* Splits */,
 				C779DD0F1EF42E6200A32066 /* Products */,
+				D490BBA2DF9C77CFB62CA392 /* Pods */,
+				227480EE2D0B3237B29B3D27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = Splits;
 			sourceTree = "<group>";
 		};
+		D490BBA2DF9C77CFB62CA392 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57CCCF4EF24DE9C8600370C5 /* Pods-Splits.debug.xcconfig */,
+				8EBE05EBA2918FF6AB499820 /* Pods-Splits.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C779DD1F1EF42E6200A32066 /* Build configuration list for PBXNativeTarget "Splits" */;
 			buildPhases = (
+				491670ACEC7238A78874C6B2 /* [CP] Check Pods Manifest.lock */,
 				C779DD0A1EF42E6200A32066 /* Sources */,
 				C779DD0B1EF42E6200A32066 /* Frameworks */,
 				C779DD0C1EF42E6200A32066 /* Resources */,
+				AD22C8185ED15DB3993BA251 /* [CP] Embed Pods Frameworks */,
+				1DB96AA09778AEA86977D37B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DB96AA09778AEA86977D37B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Splits/Pods-Splits-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		491670ACEC7238A78874C6B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AD22C8185ED15DB3993BA251 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Splits/Pods-Splits-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C779DD0A1EF42E6200A32066 /* Sources */ = {
@@ -249,6 +324,7 @@
 		};
 		C779DD201EF42E6200A32066 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57CCCF4EF24DE9C8600370C5 /* Pods-Splits.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -262,6 +338,7 @@
 		};
 		C779DD211EF42E6200A32066 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EBE05EBA2918FF6AB499820 /* Pods-Splits.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
