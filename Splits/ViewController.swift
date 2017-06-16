@@ -11,61 +11,55 @@ import RxCocoa
 import RxSwift
 
 extension NSImage {
-    convenience init? (cgimage: CGImage?) {
-        guard let cgimage = cgimage else { return nil }
-        self.init(cgImage
-            : cgimage, size
-            : CGSize.zero)
-    }
+  convenience init? (cgimage: CGImage?) {
+    guard let cgimage = cgimage else { return nil }
+    self.init(cgImage: cgimage, size: CGSize.zero)
+  }
 }
 
 class ViewController: NSViewController {
-    @IBOutlet var pageNumberField: NSTextField!
-    @IBOutlet var originalImageView
-        : NSImageView!
-    @IBOutlet var leftImageView
-        : NSImageView!
-    @IBOutlet var rightImageView
-        : NSImageView!
-    @IBOutlet var pageNumberSlider
-        : NSSlider!
+  @IBOutlet var pageNumberField: NSTextField!
+  @IBOutlet var originalImageView: NSImageView!
+  @IBOutlet var leftImageView: NSImageView!
+  @IBOutlet var rightImageView: NSImageView!
+  @IBOutlet var pageNumberSlider: NSSlider!
 
-    @IBOutlet var nextPageButton: NSButton!
-    @IBOutlet var prevPageButton
-        : NSButton!
-    @IBOutlet var splitButton
-        : NSButton!
-    @IBOutlet var progressBar: NSProgressIndicator!
+  @IBOutlet var nextPageButton: NSButton!
+  @IBOutlet var prevPageButton: NSButton!
+  @IBOutlet var splitButton: NSButton!
+  @IBOutlet var progressBar: NSProgressIndicator!
 
-    let disposeBag = DisposeBag()
+  let disposeBag = DisposeBag()
 
-    var splitter: PDFSplitter! {
-        didSet { self.initializeSplitter() }
-    }
+  var splitter: PDFSplitter! {
+    didSet { self.initializeSplitter() }
+  }
 
-    override func viewDidLoad() { super.viewDidLoad() }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
 
-    func initializeSplitter() {
-        pageNumberSlider.minValue = 1.0
-        //    progressBar.minValue = 1.0
-        splitter.numberOfPages_.subscribe(onNext: { [weak self] numberOfPages in
-            self?.pageNumberSlider.maxValue = Double(numberOfPages)
-            //      self?.progressBar.maxValue = Double(numberOfPages)
-        }).dispose()
+  func initializeSplitter() {
+    pageNumberSlider.minValue = 1.0
+    //    progressBar.minValue = 1.0
+    splitter.numberOfPages_.subscribe(onNext: { [weak self] numberOfPages in
+      self?.pageNumberSlider.maxValue = Double(numberOfPages)
+      //      self?.progressBar.maxValue = Double(numberOfPages)
+    }).dispose()
 
-        splitter.pageImage_
-            .map { NSImage(cgimage: $0) }
-            .bind(to: originalImageView.rx.image)
-            .disposed(by: disposeBag)
+    splitter.pageImage_
+      .map { NSImage(cgimage: $0) }
+      .bind(to: originalImageView.rx.image)
+      .disposed(by: disposeBag)
 
-        splitter.leftPageImage_
-            .map { NSImage(cgimage: $0) }
-            .bind(to: leftImageView.rx.image)
-            .disposed(by: disposeBag)
+    splitter.leftPageImage_
+      .map { NSImage(cgimage: $0) }
+      .bind(to: leftImageView.rx.image)
+      .disposed(by: disposeBag)
 
-        splitter.rightPageImage_
-            .map { NSImage(cgimage: $0) }
-            .bind(to: rightImageView.rx.image)
-            .disposed(by: disposeBag)
-    }
+    splitter.rightPageImage_
+      .map { NSImage(cgimage: $0) }
+      .bind(to: rightImageView.rx.image)
+      .disposed(by: disposeBag)
+  }
 }

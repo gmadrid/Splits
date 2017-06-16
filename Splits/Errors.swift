@@ -9,10 +9,10 @@
 import Foundation
 
 enum Errors: Error {
-    case CouldntOpenPdfToRead(url: URL)
-    case FailedToCreateGraphicsContext
-    case FailedToCropImage
-    case FailedToOpenPage(pageNum: Int)
-    case FailedToRenderImage
-    case NoCurrentDocument
+  case CouldntOpenPdfToRead(url: URL)
+  case FailedToCreateGraphicsContext
+  case FailedToCropImage
+  case FailedToOpenPage(pageNum: Int)
+  case FailedToRenderImage
+  case NoCurrentDocument
 }
