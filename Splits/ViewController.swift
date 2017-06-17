@@ -96,7 +96,6 @@ class ViewController: NSViewController {
     
     // Based on whether split processing is happening.
     // - show/hide split button
-    // - enable/disable open file button
     // - hide/show progress indicator
     let p = processing
       .map { !$0 }
